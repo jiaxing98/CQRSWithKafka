@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "50391114-d438-43e5-a04b-ba0ca2f443a5",
+		"name": "CQRS/kafka",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12041611"
+	},
+	"item": [
+		{
+			"name": "NewPostCommand",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Joker\",\r\n    \"message\": \"whysoserious\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/newPost",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"newPost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RestoreReadDbCommand",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentId\": \"B1A45D55-44EB-49B4-9AC9-0983CECE8320\",\r\n    \"comment\": \"Nice try but I got you\",\r\n    \"username\": \"The Dark Knight\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/restoreReadDb",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"restoreReadDb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditMessageCommand",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"said by joker\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/editMessage/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"editMessage",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7F129AE6-5663-4902-B295-8500BD7C5715"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LikePostCommand",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7171/api/v1/likePost/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"likePost",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "9F7B4CB0-1B6A-4601-B20C-8A2D74DEF0CA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddCommentCommand",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\": \"Nice try\",\r\n    \"username\": \"The Dark Knight\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/addComment/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"addComment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "9F7B4CB0-1B6A-4601-B20C-8A2D74DEF0CA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditCommentCommand",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentId\": \"B1A45D55-44EB-49B4-9AC9-0983CECE8320\",\r\n    \"comment\": \"Nice try but I got you\",\r\n    \"username\": \"The Dark Knight\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/editComment/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"editComment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7F129AE6-5663-4902-B295-8500BD7C5715"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveCommentCommand",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"commentId\": \"B1A45D55-44EB-49B4-9AC9-0983CECE8320\",\r\n    \"username\": \"The Dark Knight\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/removeComment/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"removeComment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7F129AE6-5663-4902-B295-8500BD7C5715"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePostCommand",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"whysoserious\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7171/api/v1/deletePost/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7171",
+					"path": [
+						"api",
+						"v1",
+						"deletePost",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7F129AE6-5663-4902-B295-8500BD7C5715"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPostsQuery",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7222/api/v1/postLookup",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7222",
+					"path": [
+						"api",
+						"v1",
+						"postLookup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostByIdQuery",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7222/api/v1/postLookup/byId/:id",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7222",
+					"path": [
+						"api",
+						"v1",
+						"postLookup",
+						"byId",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "9F7B4CB0-1B6A-4601-B20C-8A2D74DEF0CA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostsByAuthorQuery",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7222/api/v1/postLookup/byAuthor/:author",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7222",
+					"path": [
+						"api",
+						"v1",
+						"postLookup",
+						"byAuthor",
+						":author"
+					],
+					"variable": [
+						{
+							"key": "author",
+							"value": "Joker"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostsByCommentQuery",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7222/api/v1/postLookup/withComments",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7222",
+					"path": [
+						"api",
+						"v1",
+						"postLookup",
+						"withComments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPostsWithLikesQuery",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7222/api/v1/postLookup/withLikes/:numberOfLikes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7222",
+					"path": [
+						"api",
+						"v1",
+						"postLookup",
+						"withLikes",
+						":numberOfLikes"
+					],
+					"variable": [
+						{
+							"key": "numberOfLikes",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
